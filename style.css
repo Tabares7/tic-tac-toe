@@ -1,7 +1,5 @@
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
   font-family: 'Itim', cursive;
 }
 
@@ -31,18 +29,17 @@ header {
 }
 
 button {
-  background: rgba(255, 255, 255, 0.133);
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 1.5rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+ font-family: 'Itim', cursive;
+  background-color: #561193;
+  border: solid 2px #561193;
+  border-radius: 2rem;
+  color: #fdf7f5;
 }
 
 button:hover {
-  background: rgba(255, 255, 255, 0.233);
+    background-color: #701cca;
 }
 
 .logo {
@@ -86,6 +83,7 @@ main {
   border: solid 2px #561193;
   border-top: 6px solid #561193;
   transform: rotate(45deg);
+  transition: all 0.3s ease-in-out;
 }
 
 .player1{

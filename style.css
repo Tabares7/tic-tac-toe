@@ -198,7 +198,9 @@ footer h1{
 }
 
 .backdrop{
+
     display: none;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     z-index: 5;
     height: 100vh;

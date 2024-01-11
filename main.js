@@ -16,6 +16,9 @@ const resetBtn = document.querySelector('#restart');
 const scoreMarker = document.getElementById('marker'); //scoreM
 const score1 = document.getElementById('player1-puntuation');
 const score2 = document.getElementById('player2-puntuation');
+const restar_alert = document.querySelector('#restart-alert');
+const yes_btn = document.getElementById('yes');
+const backdrop = document.querySelector('.backdrop');
 
 
 var turn = 0;
@@ -57,6 +60,8 @@ const reset = ()=>{
         hole.classList.remove('player1');
         hole.classList.remove('player2');
     })
+    restar_alert.classList.remove('restart-alert--visible');
+    backdrop.classList.remove('backdrop--visible');
 }
 
 const checkDraw = ()=>{
@@ -64,6 +69,12 @@ const checkDraw = ()=>{
         scoreMarker.innerHTML = `It's a draw!!`;
         scoreMarker.classList.add('marker--visible');
     }
+}
+
+const showRestartAlert = ()=>{
+    restar_alert.classList.add('restart-alert--visible');
+    yes_btn.addEventListener('click', reset);
+    backdrop.classList.add('backdrop--visible');
 }
 
 const checkWinner = (player)=>{
@@ -83,7 +94,7 @@ const checkWinner = (player)=>{
                     scoreMarker.classList.add('marker--visible');
                     score1Count++;
                     score1.innerHTML = score1Count;
-                    
+                    setTimeout(showRestartAlert, 1000);
                     return;
                     
                 }else {
@@ -92,7 +103,7 @@ const checkWinner = (player)=>{
                     scoreMarker.classList.add('marker--visible');
                     score2Count++;
                     score2.innerHTML = score2Count;
-                    
+                    setTimeout(showRestartAlert, 1000);
                     return;
                 }   
         }
